@@ -1,6 +1,6 @@
 // import db from "../config/database.js";
 
-import prisma from "../config/database";
+import prisma from "../config/database.js";
 
 async function getCars() {
   // const data = await db.query(`SELECT * FROM cars`);
