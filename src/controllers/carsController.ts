@@ -8,7 +8,6 @@ async function getAllCars(req: Request, res: Response) {
     const cars = await carService.getCars();
     res.send(cars);
   } catch (e) {
-    console.log(e);
     return res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);
   }
 }
@@ -32,7 +31,6 @@ async function createCar(req: Request, res: Response) {
     await carService.createCar(model, licensePlate, year, color)
     res.sendStatus(httpStatus.CREATED);
   } catch (e) {
-    console.log(e);
     if (e.name === "ConflictError") {
       return res.sendStatus(httpStatus.CONFLICT);
     }
